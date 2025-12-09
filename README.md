@@ -201,12 +201,12 @@ docker-compose ps
 ```
 
 **Servicios disponibles:**
-- 🏦 **credit-application-service**: `http://localhost:8083`
-- 📚 **Swagger UI**: `http://localhost:8083/swagger-ui/index.html`
+- 🏦 **credit-application-service**: `http://localhost:8082`
+- 📚 **Swagger UI**: `http://localhost:8082/swagger-ui/index.html`
 - 🎲 **risk-central-mock-service**: `http://localhost:8081`
 - 🐘 **PostgreSQL**: `localhost:5432`
-- 🎲 **risk-central-mock-service**: `http://localhost:8081`
-- 🐘 **PostgreSQL**: `localhost:5432`
+- 🔥 **Prometheus**: `http://localhost:19090`
+- 📊 **Grafana**: `http://localhost:3000` (User: `admin`, Pass: `admin123`)
 
 ---
 
