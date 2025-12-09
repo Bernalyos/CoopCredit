@@ -182,9 +182,9 @@ docker-compose -f docker-compose.local.yml up -d
 ./mvnw spring-boot:run
 ```
 
-La aplicación estará disponible en: `http://localhost:8082`
+La aplicación estará disponible en: `http://localhost:8083`
 
-**Swagger UI:** `http://localhost:8082/swagger-ui/index.html`
+**Swagger UI:** `http://localhost:8083/swagger-ui/index.html`
 
 ### Opción 2: Deployment Completo con Docker Compose
 
@@ -201,8 +201,8 @@ docker-compose ps
 ```
 
 **Servicios disponibles:**
-- 🏦 **credit-application-service**: `http://localhost:8082`
-- 📚 **Swagger UI**: `http://localhost:8082/swagger-ui/index.html`
+- 🏦 **credit-application-service**: `http://localhost:8083`
+- 📚 **Swagger UI**: `http://localhost:8083/swagger-ui/index.html`
 - 🎲 **risk-central-mock-service**: `http://localhost:8081`
 - 🐘 **PostgreSQL**: `localhost:5432`
 - 🎲 **risk-central-mock-service**: `http://localhost:8081`
@@ -216,7 +216,7 @@ docker-compose ps
 
 #### Registrar Usuario
 ```bash
-curl -X POST http://localhost:8082/auth/register \
+curl -X POST http://localhost:8083/auth/register \
   -H "Content-Type: application/json" \
   -d '{
     "username": "usuario1",
@@ -227,7 +227,7 @@ curl -X POST http://localhost:8082/auth/register \
 
 #### Login
 ```bash
-curl -X POST http://localhost:8082/auth/login \
+curl -X POST http://localhost:8083/auth/login \
   -H "Content-Type: application/json" \
   -d '{
     "username": "admin",
@@ -246,7 +246,7 @@ curl -X POST http://localhost:8082/auth/login \
 
 #### Registrar Afiliado (requiere ROLE_ADMIN o ROLE_ANALISTA)
 ```bash
-curl -X POST http://localhost:8082/affiliates \
+curl -X POST http://localhost:8083/affiliates \
   -H "Content-Type: application/json" \
   -H "Authorization: Bearer YOUR_JWT_TOKEN" \
   -d '{
@@ -260,7 +260,7 @@ curl -X POST http://localhost:8082/affiliates \
 
 #### Crear Solicitud (requiere ROLE_AFILIADO)
 ```bash
-curl -X POST http://localhost:8082/credit-requests \
+curl -X POST http://localhost:8083/credit-requests \
   -H "Content-Type: application/json" \
   -H "Authorization: Bearer YOUR_JWT_TOKEN" \
   -d '{
@@ -272,7 +272,7 @@ curl -X POST http://localhost:8082/credit-requests \
 
 #### Evaluar Solicitud (requiere ROLE_ANALISTA)
 ```bash
-curl -X POST http://localhost:8082/credit-requests/1/evaluate \
+curl -X POST http://localhost:8083/credit-requests/1/evaluate \
   -H "Authorization: Bearer YOUR_JWT_TOKEN"
 ```
 
@@ -280,12 +280,12 @@ curl -X POST http://localhost:8082/credit-requests/1/evaluate \
 
 #### Health Check
 ```bash
-curl http://localhost:8082/actuator/health
+curl http://localhost:8083/actuator/health
 ```
 
 #### Métricas Prometheus
 ```bash
-curl http://localhost:8082/actuator/prometheus
+curl http://localhost:8083/actuator/prometheus
 ```
 
 ---
@@ -296,7 +296,7 @@ curl http://localhost:8082/actuator/prometheus
 
 La forma más fácil de explorar y probar la API es usando **Swagger UI**:
 
-**URL:** `http://localhost:8082/swagger-ui.html`
+**URL:** `http://localhost:8083/swagger-ui.html`
 
 Swagger UI proporciona:
 - 📖 Documentación interactiva de todos los endpoints
