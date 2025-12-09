@@ -79,36 +79,44 @@ Sistema empresarial para la gestión integral de solicitudes de crédito en coop
 ### Diagrama de Componentes
 
 ```mermaid
-graph TB
-    Client[Cliente HTTP]
-    
-    subgraph "credit-application-service :8082"
-        Controller[REST Controllers]
-        UseCase[Use Cases]
-        Domain[Domain Model]
-        JPA[JPA Repositories]
-        RiskAdapter[Risk Adapter]
+graph TD
+    subgraph "Infrastructure (Drivers)"
+        API[REST Controller]
+        Auth[Auth Controller]
     end
-    
-    subgraph "risk-central-mock-service :8081"
-        RiskAPI[Risk API]
-    end
-    
-    DB[(PostgreSQL :5432)]
-    
-    Client -->|HTTP + JWT| Controller
-    Controller --> UseCase
-    UseCase --> Domain
-    UseCase --> JPA
-    UseCase --> RiskAdapter
-    JPA --> DB
-    RiskAdapter -->|HTTP| RiskAPI
-    
-    style Domain fill:#90EE90
-    style DB fill:#4682B4
-    style RiskAPI fill:#FFD700
 
+    subgraph "Domain Layer"
+        subgraph "Input Ports"
+            UC1[Register Affiliate]
+            UC2[Create Application]
+        end
+        subgraph "Core"
+            M1[Affiliate]
+            M2[CreditApplication]
+            M3[RiskEvaluation]
+        end
+        subgraph "Output Ports"
+            P1[AffiliateRepo]
+            P2[CreditRepo]
+            P3[RiskClient]
+        end
+    end
+
+    subgraph "Infrastructure (Driven)"
+        DB[(PostgreSQL)]
+        Risk[(Risk Service)]
+    end
+
+    API --> UC2
+    Auth --> UC1
+    UC1 --> M1
+    UC2 --> M2
+    UC2 --> P3
+    P1 --> DB
+    P2 --> DB
+    P3 --> Risk
 ```
+
 
 ---
 
