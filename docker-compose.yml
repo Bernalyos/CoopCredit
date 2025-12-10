@@ -1,5 +1,3 @@
-version: '3.8'
-
 services:
   postgres:
     image: postgres:15-alpine
@@ -9,7 +7,7 @@ services:
       POSTGRES_USER: postgres
       POSTGRES_PASSWORD: postgres
     ports:
-      - "5432:5432"
+      - "5433:5432"
     volumes:
       - postgres_data:/var/lib/postgresql/data
     healthcheck:
@@ -30,7 +28,7 @@ services:
     environment:
       SERVER_PORT: 8081
     healthcheck:
-      test: [ "CMD", "wget", "--quiet", "--tries=1", "--spider", "http://localhost:8081/risk-evaluation" ]
+      test: [ "CMD", "wget", "--quiet", "--tries=1", "--spider", "http://localhost:8081/actuator/health" ]
       interval: 10s
       timeout: 5s
       retries: 5
@@ -76,7 +74,7 @@ services:
     command:
       - '--config.file=/etc/prometheus/prometheus.yml'
     ports:
-      - "9090:9090"
+      - "9091:9090"
     networks:
       - coopcredit-net
 

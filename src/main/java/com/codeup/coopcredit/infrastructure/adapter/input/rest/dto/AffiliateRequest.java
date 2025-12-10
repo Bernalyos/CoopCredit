@@ -17,7 +17,8 @@ public class AffiliateRequest {
     @Positive(message = "Salary must be positive")
     private BigDecimal salary;
 
-    @NotNull(message = "Affiliation Date is required")
+    // @NotNull(message = "Affiliation Date is required") - Removed to allow
+    // auto-generation
     private LocalDate affiliationDate;
 
     // Getters and Setters

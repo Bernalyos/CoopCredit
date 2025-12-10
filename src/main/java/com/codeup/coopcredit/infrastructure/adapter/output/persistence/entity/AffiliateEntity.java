@@ -25,8 +25,9 @@ public class AffiliateEntity {
     @Column(name = "affiliation_date", nullable = false)
     private LocalDate affiliationDate;
 
+    @Enumerated(EnumType.STRING)
     @Column(nullable = false)
-    private String status; // Persist as String (ACTIVE/INACTIVE)
+    private com.codeup.coopcredit.domain.model.affiliate.AffiliateStatus status;
 
     @OneToMany(mappedBy = "affiliate", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
     private List<CreditRequestEntity> creditRequests;
@@ -72,11 +73,11 @@ public class AffiliateEntity {
         this.affiliationDate = affiliationDate;
     }
 
-    public String getStatus() {
+    public com.codeup.coopcredit.domain.model.affiliate.AffiliateStatus getStatus() {
         return status;
     }
 
-    public void setStatus(String status) {
+    public void setStatus(com.codeup.coopcredit.domain.model.affiliate.AffiliateStatus status) {
         this.status = status;
     }
 

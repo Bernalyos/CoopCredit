@@ -74,4 +74,20 @@ public class Affiliate {
     public void setDocument(String document) {
         this.document = document;
     }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public void setSalary(BigDecimal salary) {
+        this.salary = salary;
+    }
+
+    public void setAffiliationDate(LocalDate affiliationDate) {
+        this.affiliationDate = affiliationDate;
+    }
+
+    public void setStatus(AffiliateStatus status) {
+        this.status = status;
+    }
 }

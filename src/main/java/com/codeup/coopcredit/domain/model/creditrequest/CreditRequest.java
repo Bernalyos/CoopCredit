@@ -80,4 +80,28 @@ public class CreditRequest {
     public void setRiskEvaluation(RiskEvaluation riskEvaluation) {
         this.riskEvaluation = riskEvaluation;
     }
+
+    public void setAffiliate(Affiliate affiliate) {
+        this.affiliate = affiliate;
+    }
+
+    public void setAmount(BigDecimal amount) {
+        this.amount = amount;
+    }
+
+    public void setTerm(Integer term) {
+        this.term = term;
+    }
+
+    public void setRate(BigDecimal rate) {
+        this.rate = rate;
+    }
+
+    public void setRequestDate(LocalDateTime requestDate) {
+        this.requestDate = requestDate;
+    }
+
+    public void setStatus(CreditRequestStatus status) {
+        this.status = status;
+    }
 }

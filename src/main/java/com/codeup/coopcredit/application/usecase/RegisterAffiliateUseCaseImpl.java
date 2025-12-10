@@ -21,6 +21,10 @@ public class RegisterAffiliateUseCaseImpl implements RegisterAffiliateUseCase {
             throw new IllegalArgumentException("Affiliate with document " + document + " already exists.");
         }
 
+        if (affiliationDate == null) {
+            affiliationDate = LocalDate.now();
+        }
+
         Affiliate newAffiliate = new Affiliate(null, document, name, salary, affiliationDate, AffiliateStatus.ACTIVE);
         return affiliateRepository.save(newAffiliate);
     }

@@ -209,6 +209,20 @@ docker-compose ps
 - 📊 **Grafana**: `http://localhost:3000` (User: `admin`, Pass: `admin123`)
 
 ---
+## 🐘 Conexión con DBeaver (u otro cliente SQL)
+
+Para visualizar la base de datos, configura tu cliente con estos datos:
+
+| Campo | Valor | Nota |
+|-------|-------|------|
+| **Host** | `localhost` | |
+| **Port** | `5433` | ⚠️ Cambiado de 5432 para evitar conflictos |
+| **Database** | `coopcredit_db` | |
+| **Username** | `postgres` | |
+| **Password** | `Qwe.123*` | |
+| **Driver** | PostgreSQL | |
+
+---
 
 ## 💻 Uso
 

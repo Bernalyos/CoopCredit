@@ -26,7 +26,7 @@ class SpringDataAffiliateRepositoryTest {
         entity.setName("Jane Doe");
         entity.setSalary(BigDecimal.valueOf(4500));
         entity.setAffiliationDate(LocalDate.now());
-        entity.setStatus(com.codeup.coopcredit.domain.model.affiliate.AffiliateStatus.ACTIVE.name());
+        entity.setStatus(com.codeup.coopcredit.domain.model.affiliate.AffiliateStatus.ACTIVE);
         repository.save(entity);
 
         // When
