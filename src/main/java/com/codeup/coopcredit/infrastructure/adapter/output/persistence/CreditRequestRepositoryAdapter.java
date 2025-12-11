@@ -41,6 +41,14 @@ public class CreditRequestRepositoryAdapter implements CreditRequestRepositoryPo
     }
 
     @Override
+    public List<CreditRequest> findAll() {
+        return repository.findAll()
+                .stream()
+                .map(mapper::toDomain)
+                .collect(Collectors.toList());
+    }
+
+    @Override
     public List<CreditRequest> findAllPending() {
         return repository.findByStatus("PENDING")
                 .stream()

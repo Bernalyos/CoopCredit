@@ -1,16 +1,5 @@
 package com.codeup.coopcredit.infrastructure.config;
 
-import com.codeup.coopcredit.application.usecase.CreateCreditRequestUseCaseImpl;
-import com.codeup.coopcredit.application.usecase.EditAffiliateUseCaseImpl;
-import com.codeup.coopcredit.application.usecase.EvaluateCreditRequestUseCaseImpl;
-import com.codeup.coopcredit.application.usecase.RegisterAffiliateUseCaseImpl;
-import com.codeup.coopcredit.domain.ports.in.CreateCreditRequestUseCase;
-import com.codeup.coopcredit.domain.ports.in.EditAffiliateUseCase;
-import com.codeup.coopcredit.domain.ports.in.EvaluateCreditRequestUseCase;
-import com.codeup.coopcredit.domain.ports.in.RegisterAffiliateUseCase;
-import com.codeup.coopcredit.domain.ports.out.AffiliateRepositoryPort;
-import com.codeup.coopcredit.domain.ports.out.CreditRequestRepositoryPort;
-import com.codeup.coopcredit.domain.ports.out.RiskCentralPort;
 import com.codeup.coopcredit.infrastructure.adapter.output.persistence.repository.SpringDataUserRepository;
 
 import org.springframework.context.annotation.Bean;
@@ -27,27 +16,7 @@ import org.springframework.security.crypto.password.PasswordEncoder;
 @Configuration
 public class ApplicationConfig {
 
-    @Bean
-    public RegisterAffiliateUseCase registerAffiliateUseCase(AffiliateRepositoryPort repository) {
-        return new RegisterAffiliateUseCaseImpl(repository);
-    }
-
-    @Bean
-    public EditAffiliateUseCase editAffiliateUseCase(AffiliateRepositoryPort repository) {
-        return new EditAffiliateUseCaseImpl(repository);
-    }
-
-    @Bean
-    public CreateCreditRequestUseCase createCreditRequestUseCase(CreditRequestRepositoryPort creditRepo,
-            AffiliateRepositoryPort affiliateRepo) {
-        return new CreateCreditRequestUseCaseImpl(creditRepo, affiliateRepo);
-    }
-
-    @Bean
-    public EvaluateCreditRequestUseCase evaluateCreditRequestUseCase(CreditRequestRepositoryPort creditRepo,
-            RiskCentralPort riskPort) {
-        return new EvaluateCreditRequestUseCaseImpl(creditRepo, riskPort);
-    }
+    // Use cases are now annotated with @Service, no need for @Bean definitions
 
     @Bean
     public UserDetailsService userDetailsService(SpringDataUserRepository userRepository) {

@@ -12,7 +12,9 @@ import com.codeup.coopcredit.domain.model.creditrequest.RiskLevel;
 import com.codeup.coopcredit.domain.ports.in.EvaluateCreditRequestUseCase;
 import com.codeup.coopcredit.domain.ports.out.CreditRequestRepositoryPort;
 import com.codeup.coopcredit.domain.ports.out.RiskCentralPort;
+import org.springframework.stereotype.Service;
 
+@Service
 public class EvaluateCreditRequestUseCaseImpl implements EvaluateCreditRequestUseCase {
 
     private final CreditRequestRepositoryPort creditRequestRepository;

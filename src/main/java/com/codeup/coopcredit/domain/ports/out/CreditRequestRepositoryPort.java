@@ -5,11 +5,13 @@ import java.util.List;
 import java.util.Optional;
 
 public interface CreditRequestRepositoryPort {
-    CreditRequest save(CreditRequest request);
+    CreditRequest save(CreditRequest creditRequest);
 
     Optional<CreditRequest> findById(Long id);
 
     List<CreditRequest> findAllByAffiliateId(Long affiliateId);
+
+    List<CreditRequest> findAll();
 
     List<CreditRequest> findAllPending();
 }

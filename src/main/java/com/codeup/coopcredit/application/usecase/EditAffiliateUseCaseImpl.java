@@ -3,8 +3,11 @@ package com.codeup.coopcredit.application.usecase;
 import com.codeup.coopcredit.domain.model.affiliate.Affiliate;
 import com.codeup.coopcredit.domain.ports.in.EditAffiliateUseCase;
 import com.codeup.coopcredit.domain.ports.out.AffiliateRepositoryPort;
+import org.springframework.stereotype.Service;
+
 import java.math.BigDecimal;
 
+@Service
 public class EditAffiliateUseCaseImpl implements EditAffiliateUseCase {
 
     private final AffiliateRepositoryPort affiliateRepository;
