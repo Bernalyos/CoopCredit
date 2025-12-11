@@ -1,10 +1,9 @@
 # CoopCredit - Comprehensive Credit Application System
 
-[![Java](https://img.shields.io/badge/Java-17-orange.svg)](https://www.oracle.com/java/)
-[![Spring Boot](https://img.shields.io/badge/Spring%20Boot-3.5.8-brightgreen.svg)](https://spring.io/projects/spring-boot)
-[![PostgreSQL](https://img.shields.io/badge/PostgreSQL-15-blue.svg)](https://www.postgresql.org/)
-[![Docker](https://img.shields.io/badge/Docker-Compose-2496ED.svg)](https://www.docker.com/)
-[![License](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
+[![Java]
+[![Spring Boot]
+[![PostgreSQL]
+[![Docker]
 
 Enterprise-grade system for comprehensive credit application management in cooperatives, implemented with **Hexagonal Architecture** and industry best practices.
 
